@@ -6,22 +6,26 @@ namespace TravelUiDribble.ViewModels
 {
     class NewItemViewModel : MvvmHelpers.BaseViewModel
     {
-        private string _someImage;
-        public string SomeImage
+        private string _name;
+        public string Name
         {
-            get { return _someImage; }
+            get { return _name; }
             set
             {
-                _someImage = value;
-                OnPropertyChanged(nameof(SomeImage));
+                _name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
 
-        public NewItemViewModel(string i)
+        public NewItemViewModel()
         {
 
-            SomeImage = i;
+            
             //selectedCardLayout.ScaleTo(2,2000,Easing.BounceOut); 
         }
+
+        //public NewItemViewModel()
+        //{
+        //}
     }
 }

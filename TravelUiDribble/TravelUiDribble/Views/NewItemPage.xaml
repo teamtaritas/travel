@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TravelUiDribble.Views.NewItemPage"
-             BackgroundImageSource="{Binding SomeImage}"
+             BackgroundImageSource="{Binding Name}"
              Opacity="50"
              NavigationPage.HasNavigationBar="False">
     <Grid>
@@ -34,8 +34,9 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0"
-                       Text="{Binding SomeImage}" FontSize="Title" 
+                <Label Grid.Row="0" 
+                       Grid.Column="0"
+                       x:Name="nameLabel" FontSize="Title" 
                        TextColor="White" FontAttributes="Bold"
                        Margin="10"/>
 
@@ -62,7 +63,7 @@
                     </Grid>
                 </Frame>
 
-                <Label Grid.Row="1" Text="A valley is a low area between hills or mountains typically with a river runningthrough it. In geology, a valley or dale is a depression that is longer than it is wide."
+                <Label Grid.Row="1" x:Name="infoLabel" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Ut enim ad minim veniam,laboris nisi ut aliquip ex ea commodo consequat."
                        LineBreakMode="WordWrap" FontAttributes="Bold"
                        TextColor="White" FontSize="Body" Margin="10,0,0,0"/>
 
