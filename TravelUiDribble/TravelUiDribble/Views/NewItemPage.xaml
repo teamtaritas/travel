@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TravelUiDribble.Views.NewItemPage"
+             BackgroundImageSource="{Binding SomeImage}"
+             Opacity="50"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row ="0">
+            <ImageButton Source="whiteback.png" HorizontalOptions="Start" 
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Start" Margin="20" 
+                         Clicked="BackButton_Clicked"/>
+        </StackLayout>
+
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{Binding SomeImage}" FontSize="Title" 
+                       TextColor="White" FontAttributes="Bold"
+                       Margin="10"/>
+
+                <Frame Grid.Row="0" Grid.Column="1"
+                       IsClippedToBounds="True" HeightRequest="20" WidthRequest="50"
+                       CornerRadius="10" Margin="10" Padding="0" BackgroundColor="#BF0077DA"
+                       HorizontalOptions="Center" VerticalOptions="Center">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0" 
+                               Source="whitestar.png" HeightRequest="10"
+                               Margin="5,0,0,5"/>
+
+                        <Label Grid.Row="0" Grid.Column="1" Text="4.1" 
+                               TextColor="White" FontAttributes="Bold" />
+
+                    </Grid>
+                </Frame>
+
+                <Label Grid.Row="1" Text="A valley is a low area between hills or mountains typically with a river runningthrough it. In geology, a valley or dale is a depression that is longer than it is wide."
+                       LineBreakMode="WordWrap" FontAttributes="Bold"
+                       TextColor="White" FontSize="Body" Margin="10,0,0,0"/>
+
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</ContentPage>

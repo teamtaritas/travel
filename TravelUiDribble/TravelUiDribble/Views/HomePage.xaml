@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:custom="clr-namespace:TravelUiDribble.Controls"
+             x:Class="TravelUiDribble.Views.HomePage">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Label Text="Welcome Saba" FontAttributes="Bold" 
+                   FontSize="Title"
+                   TextColor="Black"
+                   HorizontalOptions="Start"/>
+            <Frame CornerRadius="360"
+                   WidthRequest="50" 
+                   HeightRequest="50" 
+                   IsClippedToBounds="True"
+                   Padding="0" 
+                   HorizontalOptions="EndAndExpand">
+                <Image Source="saba"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid Grid.Row="1">
+
+            <cards:SfCardLayout SwipeDirection="Left" 
+                                x:Name="Pic"
+                                HeightRequest="250" 
+                                WidthRequest="150" 
+                                BackgroundColor="White" 
+                                CardTappedCommand="{Binding TappedCommand}">
+
+                <cards:SfCardView BorderColor="Black" 
+                                  FadeOutOnSwiping="True">
+                    <Image Source="lake.png" 
+                               Aspect="Fill"/>
+                </cards:SfCardView>
+
+                <cards:SfCardView BorderColor="Black" 
+                                  FadeOutOnSwiping="True" x:Name="MountainName">
+                    <Image Source="mountain.png" 
+                           Aspect="AspectFill"/>
+                </cards:SfCardView>
+
+                <cards:SfCardView BorderColor="Black" 
+                                  FadeOutOnSwiping="True">
+                    <Image Source="valley.png" 
+                           Aspect="AspectFill"  x:Name="ValleyName"/>
+                </cards:SfCardView>
+
+            </cards:SfCardLayout>
+        </Grid>
+
+        <StackLayout Grid.Row="2">
+            <Label Text="Popular tours" TextColor="Black"
+                           FontSize="Large" FontAttributes="Bold"
+                   Margin="5"/>
+        </StackLayout>
+
+        <Grid Grid.Row="3">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <custom:TourDetail ImageSource="spain.jpeg"
+                                       NameSource="Spain"
+                                       AirportNameSource="AMS - ALC"
+                                       PriceSource="$750"
+                                       DaysSource="7 Days"/>
+
+                    <custom:TourDetail ImageSource="italy.jpg"
+                                       NameSource="Italy"
+                                       AirportNameSource="AMS - VCE"
+                                       PriceSource="$700"
+                                       DaysSource="6 Days"/>
+
+                    <custom:TourDetail ImageSource="greece.jpg"
+                                       NameSource="Greece"
+                                       AirportNameSource="JFK - ATH"
+                                       PriceSource="$700"
+                                       DaysSource="7 Days"/>
+
+                    <custom:TourDetail ImageSource="prague.jpg"
+                                       NameSource="Prague"
+                                       AirportNameSource="LYC - PRG"
+                                       PriceSource="$680"
+                                       DaysSource="6 Days"/>
+
+                    <custom:TourDetail ImageSource="berlin.jpg"
+                                       NameSource="Berlin"
+                                       AirportNameSource="LYC - BER"
+                                       PriceSource="$650"
+                                       DaysSource="5 Days"/>
+
+                    <custom:TourDetail ImageSource="shimla.jpg"
+                                       NameSource="Shimla"
+                                       AirportNameSource="BOM - SLV"
+                                       PriceSource="$500"
+                                       DaysSource="7 Days"/>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+        <Grid Grid.Row="4"
+              ColumnSpacing="0" Padding="0"
+              BackgroundColor="White"
+              IsClippedToBounds="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <custom:CustomTabs Grid.Column="0" 
+                               ImageSource="home.png"
+                               TabsLabel="Home"
+                               TabsLabelColor="Black"/>
+            <custom:CustomTabs Grid.Column="1" 
+                               ImageSource="star2.png"
+                               TabsLabel="Hotels"
+                               TabsLabelColor="#E3E9ED"/>
+            <custom:CustomTabs Grid.Column="2" 
+                               ImageSource="tours1.png"
+                               TabsLabel="Tours"
+                               TabsLabelColor="#E3E9ED"/>
+            <custom:CustomTabs Grid.Column="3" 
+                               ImageSource="heart1.png"
+                               TabsLabel="Saved"
+                               TabsLabelColor="#E3E9ED"/>
+            <custom:CustomTabs Grid.Column="4" 
+                               ImageSource="user1.png"
+                               TabsLabel="Profile"
+                               TabsLabelColor="#E3E9ED"/>
+
+        </Grid>
+    </Grid>
+</ContentPage>

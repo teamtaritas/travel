@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TravelUiDribble.Controls.TourDetail"
+             x:Name="TourDetailPage"
+             Orientation="Horizontal">
+
+    <Frame VerticalOptions="End" 
+           HorizontalOptions="Center" 
+           Padding="0"
+           IsClippedToBounds="True" 
+           WidthRequest="60" 
+           HeightRequest="60" 
+           CornerRadius="10"
+           Margin="10">
+        <Image Source="{Binding ImageSource,
+                                Source={x:Reference TourDetailPage}}"/>
+    </Frame>
+
+    <StackLayout Spacing="0" 
+                 VerticalOptions="Center">
+
+        <Label Text="{Binding NameSource,
+                                Source={x:Reference TourDetailPage}}" 
+               FontSize="20"
+               FontAttributes="None" 
+               TextColor="Black"/>
+
+        <Label Text="{Binding AirportNameSource,
+                                Source={x:Reference TourDetailPage}}"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Image Source="ratingstar.png"/>
+            <Image Source="ratingstar.png"/>
+            <Image Source="ratingstar.png"/>
+            <Image Source="ratingstar.png"/>
+            <Image Source="ratingstar.png"/>
+        </StackLayout>
+
+    </StackLayout>
+
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center"
+                 HorizontalOptions="EndAndExpand"
+                 Margin="5">
+
+        <Label Text="{Binding PriceSource,
+                                Source={x:Reference TourDetailPage}}"
+               HorizontalOptions="EndAndExpand"/>
+        <Label Text="{Binding DaysSource,
+                                Source={x:Reference TourDetailPage}}"/>
+
+    </StackLayout>
+</StackLayout>
